@@ -1,0 +1,60 @@
+<nb-card size="large">
+  <nb-card-header>Infrastrucure Graph
+    <button *ngIf="isActive" class="btn btn-secondary ml-3" (click)="stop.emit()">
+      <nb-icon icon="pause-circle"></nb-icon>
+      Stop updating
+    </button>
+    <button *ngIf="!isActive" class="btn btn-primary ml-3" (click)="start.emit()">
+      <nb-icon icon="play-circle"></nb-icon>
+      Start updating
+    </button>
+  </nb-card-header>
+  <nb-card-body *ngIf="nodes">
+    <ngx-graph [view]="[900, 500]" layout="colaForceDirected" [links]="links" [nodes]="nodes" [clusters]="clusters">
+      <ng-template #defsTemplate>
+        <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
+          <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+        </svg:marker>
+      </ng-template>
+
+      <ng-template #clusterTemplate let-cluster>
+        <svg:g class="node cluster" ngx-tooltip [tooltipPlacement]="'top'" [tooltipType]="'tooltip'"
+          [tooltipTitle]="cluster.label">
+          <svg:rect rx="5" ry="5" [attr.width]="cluster.dimension.width" [attr.height]="cluster.dimension.height"
+            [attr.fill]="cluster.data.color" />
+          <svg:text alignment-baseline="central" [attr.x]="10" fill="white" [attr.fontSize]="cluster.fontSize || 12"
+            [attr.fontWeight]="cluster.fontWeight || 400" [attr.y]="cluster.dimension.height / 2">
+            {{cluster.label}}
+          </svg:text>
+        </svg:g>
+      </ng-template>
+
+      <ng-template #nodeTemplate let-node>
+        <svg:g class="node" ngx-tooltip [tooltipPlacement]="'top'" [tooltipType]="'tooltip'"
+          [tooltipTitle]="node.label">
+          <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height"
+            [attr.fill]="node.det.color || 'rgba(255, 255, 255, 0.5)'" />
+          <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2" fontWeight="700">
+            {{node.label}}
+          </svg:text>
+          <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2 + 15"
+            fontWeight="100">
+            {{node.id}}
+          </svg:text>
+        </svg:g>
+      </ng-template>
+
+      <ng-template #linkTemplate let-link>
+        <svg:g class="edge">
+          <svg:path class="line" stroke-width="2" marker-end="url(#arrow)"></svg:path>
+          <svg:text class="edge-label" text-anchor="middle">
+            <textPath class="text-path" [attr.href]="'#' + link.id" [style.dominant-baseline]="link.dominantBaseline"
+              startOffset="50%">
+              {{link.label}}
+            </textPath>
+          </svg:text>
+        </svg:g>
+      </ng-template>
+    </ngx-graph>
+  </nb-card-body>
+</nb-card>

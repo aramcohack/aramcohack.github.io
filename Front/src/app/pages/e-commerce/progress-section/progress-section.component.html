@@ -1,0 +1,15 @@
+<nb-card size="large">
+  <nb-card-header>
+    Attacks log
+  </nb-card-header>
+  <nb-card-body *ngIf="(attacks | async) as at">
+    <div class="progress-info" (click)="hs(item[0])" *ngFor="let item of at">
+      <div class="subtitle">Attack ID: {{ item[0] }}</div>
+      <div class="h3">Attack level: {{ namesMap[item[1]] }}</div>
+      <nb-progress-bar [value]="item[1] / 7 * 100"></nb-progress-bar>
+      <div class="caption description">
+        <!-- <bdi>Subtitle</bdi> -->
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>
