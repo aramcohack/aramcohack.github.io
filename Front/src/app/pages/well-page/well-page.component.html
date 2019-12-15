@@ -1,0 +1,258 @@
+<div class="row">
+  <div class="col-xxl-6 col-md-6" [ngClass]="{
+    'col-xxl-6': isComparing,
+    'col-md-6': isComparing,
+    'col-xxl-12': !isComparing,
+    'col-md-12': !isComparing
+  }">
+    <nb-card *ngIf="d">
+      <nb-card-header>
+        <div class="d-flex justify-content-between">
+          Well {{data.WELL_NAME}} details
+          <button class="grid-view-button" status="info" nbButton size="small"
+            [appearance]="isComparing ? 'outline' : 'filled'" (click)="toggleComaring()">
+            <nb-icon icon="grid" pack="eva"></nb-icon>
+            Find a twin well
+          </button>
+        </div>
+      </nb-card-header>
+      <nb-card-body>
+        <h2>
+          Well overview
+        </h2>
+        <nb-accordion class="acc">
+          <nb-accordion-item>
+            <nb-accordion-item-header>Well {{data.WELL_NAME}} all metrics</nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <nb-list>
+                <nb-list-item><b>Country:</b> {{data.Country }}</nb-list-item>
+                <nb-list-item><b>WELL_NAME:</b> {{data.WELL_NAME }}</nb-list-item>
+                <nb-list-item><b>OGA Well Name:</b> {{data['OGA Well Name ']}}</nb-list-item>
+                <nb-list-item><b>WH_SITETYPE:</b> {{data.WH_SITETYPE }}</nb-list-item>
+                <nb-list-item><b>WH_FIELD:</b> {{data.WH_FIELD }}</nb-list-item>
+                <nb-list-item><b>WH_BLOCK:</b> {{data.WH_BLOCK }}</nb-list-item>
+                <nb-list-item><b>WH_LAT:</b> {{data.WH_LAT }}</nb-list-item>
+                <nb-list-item><b>WH_LONG:</b> {{data.WH_LONG }}</nb-list-item>
+                <nb-list-item><b>WH_COORD_SYS:</b> {{data.WH_COORD_SYS }}</nb-list-item>
+                <nb-list-item><b>WH_OPERATOR:</b> {{data.WH_OPERATOR }}</nb-list-item>
+                <nb-list-item><b>WH_SPUD_DATE:</b> {{data.WH_SPUD_DATE }}</nb-list-item>
+                <nb-list-item><b>WH_SPUD_YEAR:</b> {{data.WH_SPUD_YEAR }}</nb-list-item>
+                <nb-list-item><b>WH_COMP_DATE:</b> {{data.WH_COMP_DATE }}</nb-list-item>
+                <nb-list-item><b>WH_TD_M:</b> {{data.WH_TD_M }}</nb-list-item>
+                <nb-list-item><b>WH_DR_ELEV_M:</b> {{data.WH_DR_ELEV_M }}</nb-list-item>
+                <nb-list-item><b>WH_DEPTH_REF:</b> {{data.WH_DEPTH_REF }}</nb-list-item>
+                <nb-list-item><b>WH_WATER_DEPTH_M:</b> {{data.WH_WATER_DEPTH_M }}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID:</b> {{data.SAMPLE_ID }}</nb-list-item>
+                <nb-list-item><b>SH_DEPTH_TOP_FT:</b> {{data.SH_DEPTH_TOP_FT }}</nb-list-item>
+                <nb-list-item><b>SH_DEPTH_BOT_FT:</b> {{data.SH_DEPTH_BOT_FT }}</nb-list-item>
+                <nb-list-item><b>SH_SAMPLE_TYPE:</b> {{data.SH_SAMPLE_TYPE }}</nb-list-item>
+                <nb-list-item><b>SH_SAMPLE_SUB_TYPE:</b> {{data.SH_SAMPLE_SUB_TYPE }}</nb-list-item>
+                <nb-list-item><b>SH_ORIG:</b> {{data.SH_ORIG }}</nb-list-item>
+                <nb-list-item><b>SH_ORIG_DESC:</b> {{data.SH_ORIG_DESC }}</nb-list-item>
+                <nb-list-item><b>SH_TREATMENT:</b> {{data.SH_TREATMENT }}</nb-list-item>
+                <nb-list-item><b>SH_TREATMENT_DESC:</b> {{data.SH_TREATMENT_DESC }}</nb-list-item>
+                <nb-list-item><b>SH_LITH:</b> {{data.SH_LITH }}</nb-list-item>
+                <nb-list-item><b>SH_AGE:</b> {{data.SH_AGE }}</nb-list-item>
+                <nb-list-item><b>SH_AGE_BOT:</b> {{data.SH_AGE_BOT }}</nb-list-item>
+                <nb-list-item><b>SH_FORM:</b> {{data.SH_FORM }}</nb-list-item>
+                <nb-list-item><b>SH_FORM_BOT:</b> {{data.SH_FORM_BOT }}</nb-list-item>
+                <nb-list-item><b>SH_CDATE:</b> {{data.SH_CDATE }}</nb-list-item>
+                <nb-list-item><b>SH_COMMENT:</b> {{data.SH_COMMENT }}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID_GM:</b> {{data.SAMPLE_ID_GM }}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID_GDB:</b> {{data.SAMPLE_ID_GDB }}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID_SAM:</b> {{data.SAMPLE_ID_SAM }}</nb-list-item>
+                <nb-list-item><b>EXT_SAMPLE_VENDOR:</b> {{data.EXT_SAMPLE_VENDOR }}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID_EXT:</b> {{data.SAMPLE_ID_EXT }}</nb-list-item>
+                <nb-list-item><b>GAS_METHOD:</b> {{data.GAS_METHOD }}</nb-list-item>
+                <nb-list-item><b>GAS_LAB:</b> {{data.GAS_LAB }}</nb-list-item>
+                <nb-list-item><b>GAS_ACQ_DATE:</b> {{data.GAS_ACQ_DATE }}</nb-list-item>
+                <nb-list-item><b>GAS_TOTAL_CONCENTRATION:</b> {{data.GAS_TOTAL_CONCENTRATION }}</nb-list-item>
+                <nb-list-item><b>GAS_AIR:</b> {{data.GAS_AIR }}</nb-list-item>
+                <nb-list-item><b>GAS_C1:</b> {{data.GAS_C1 }}</nb-list-item>
+                <nb-list-item><b>GAS_C2:</b> {{data.GAS_C2 }}</nb-list-item>
+                <nb-list-item><b>C2_UNSAT:</b> {{data.C2_UNSAT }}</nb-list-item>
+                <nb-list-item><b>GAS_C3:</b> {{data.GAS_C3 }}</nb-list-item>
+                <nb-list-item><b>C3_UNSAT:</b> {{data.C3_UNSAT }}</nb-list-item>
+                <nb-list-item><b>GAS_IC4:</b> {{data.GAS_IC4 }}</nb-list-item>
+                <nb-list-item><b>GAS_NC4:</b> {{data.GAS_NC4 }}</nb-list-item>
+                <nb-list-item><b>C4_UNSAT:</b> {{data.C4_UNSAT }}</nb-list-item>
+                <nb-list-item><b>GAS_NEOC5:</b> {{data.GAS_NEOC5 }}</nb-list-item>
+                <nb-list-item><b>GAS_IC5:</b> {{data.GAS_IC5 }}</nb-list-item>
+                <nb-list-item><b>GAS_NC5:</b> {{data.GAS_NC5 }}</nb-list-item>
+                <nb-list-item><b>C5_UNSAT:</b> {{data.C5_UNSAT }}</nb-list-item>
+                <nb-list-item><b>GAS_NC5_PLUS:</b> {{data.GAS_NC5_PLUS }}</nb-list-item>
+                <nb-list-item><b>GAS_C6PLUS:</b> {{data.GAS_C6PLUS }}</nb-list-item>
+                <nb-list-item><b>GAS_O2:</b> {{data.GAS_O2 }}</nb-list-item>
+                <nb-list-item><b>GAS_CO2:</b> {{data.GAS_CO2 }}</nb-list-item>
+                <nb-list-item><b>GAS_H2:</b> {{data.GAS_H2 }}</nb-list-item>
+                <nb-list-item><b>GAS_H2S:</b> {{data.GAS_H2S }}</nb-list-item>
+                <nb-list-item><b>GAS_HE:</b> {{data.GAS_HE }}</nb-list-item>
+                <nb-list-item><b>GAS_N2:</b> {{data.GAS_N2 }}</nb-list-item>
+                <nb-list-item><b>D_G_METHOD:</b> {{data.D_G_METHOD }}</nb-list-item>
+                <nb-list-item><b>D_G_LAB:</b> {{data.D_G_LAB }}</nb-list-item>
+                <nb-list-item><b>D_G_DATA_TYPE:</b> {{data.D_G_DATA_TYPE }}</nb-list-item>
+                <nb-list-item><b>D_G_ACQ_DATE:</b> {{data.D_G_ACQ_DATE }}</nb-list-item>
+                <nb-list-item><b>CSIA_CONC_C1:</b> {{data.CSIA_CONC_C1 }}</nb-list-item>
+                <nb-list-item><b>CSIA_NC1:</b> {{data.CSIA_NC1 }}</nb-list-item>
+                <nb-list-item><b>CSIA_NC2:</b> {{data.CSIA_NC2 }}</nb-list-item>
+                <nb-list-item><b>CSIA_NC3:</b> {{data.CSIA_NC3 }}</nb-list-item>
+                <nb-list-item><b>CSIA_IC4:</b> {{data.CSIA_IC4 }}</nb-list-item>
+                <nb-list-item><b>CSIA_NC4:</b> {{data.CSIA_NC4 }}</nb-list-item>
+                <nb-list-item><b>CSIA_NEOC5:</b> {{data.CSIA_NEOC5 }}</nb-list-item>
+                <nb-list-item><b>CSIA_IC5:</b> {{data.CSIA_IC5 }}</nb-list-item>
+                <nb-list-item><b>CSIA_NC5:</b> {{data.CSIA_NC5 }}</nb-list-item>
+                <nb-list-item><b>CSIA_ETHENE:</b> {{data.CSIA_ETHENE }}</nb-list-item>
+                <nb-list-item><b>CSIA_PROPENE:</b> {{data.CSIA_PROPENE }}</nb-list-item>
+                <nb-list-item><b>DC_G_CO2:</b> {{data.DC_G_CO2 }}</nb-list-item>
+                <nb-list-item><b>DO_G_CO2:</b> {{data.DO_G_CO2 }}</nb-list-item>
+                <nb-list-item><b>DS_G_H2S:</b> {{data.DS_G_H2S }}</nb-list-item>
+                <nb-list-item><b>DD_G_H2:</b> {{data.DD_G_H2 }}</nb-list-item>
+                <nb-list-item><b>DN_G_N2:</b> {{data.DN_G_N2 }}</nb-list-item>
+                <nb-list-item><b>DD_G_GAS:</b> {{data.DD_G_GAS }}</nb-list-item>
+                <nb-list-item><b>DD_G_NC1:</b> {{data.DD_G_NC1 }}</nb-list-item>
+                <nb-list-item><b>DD_G_NC2:</b> {{data.DD_G_NC2 }}</nb-list-item>
+                <nb-list-item><b>DD_G_NC3:</b> {{data.DD_G_NC3 }}</nb-list-item>
+                <nb-list-item><b>DD_G_IC4:</b> {{data.DD_G_IC4 }}</nb-list-item>
+                <nb-list-item><b>DD_G_NC4:</b> {{data.DD_G_NC4 }}</nb-list-item>
+                <nb-list-item><b>DD_G_IC5:</b> {{data.DD_G_IC5 }}</nb-list-item>
+                <nb-list-item><b>DD_G_NC5:</b> {{data.DD_G_NC5 }}</nb-list-item>
+              </nb-list>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+        </nb-accordion>
+        <div style="height: 60vh;">
+          <chart style="height: 60vh;" [type]=" type" [data]="d" [options]="options"></chart>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+  <div *ngIf="isComparing" class="col-xxl-6 col-md-6">
+    <nb-card *ngIf="d1">
+      <nb-card-header>Well {{comapredData.WELL_NAME}} is similar to {{data.WELL_NAME}}</nb-card-header>
+      <nb-card-body>
+        <h2>
+          Well overview
+        </h2>
+        <nb-accordion class="acc">
+          <nb-accordion-item>
+            <nb-accordion-item-header>Well {{data.WELL_NAME}} all metrics</nb-accordion-item-header>
+            <nb-accordion-item-body>
+              <nb-list>
+                <nb-list-item><b>Country:</b> {{comapredData.Country}}</nb-list-item>
+                <nb-list-item><b>WELL_NAME:</b> {{comapredData.WELL_NAME}}</nb-list-item>
+                <nb-list-item><b>OGA Well Name:</b> {{comapredData['OGA Well Name']}}</nb-list-item>
+                <nb-list-item><b>WH_SITETYPE:</b> {{comapredData.WH_SITETYPE}}</nb-list-item>
+                <nb-list-item><b>WH_FIELD:</b> {{comapredData.WH_FIELD}}</nb-list-item>
+                <nb-list-item><b>WH_BLOCK:</b> {{comapredData.WH_BLOCK}}</nb-list-item>
+                <nb-list-item><b>WH_LAT:</b> {{comapredData.WH_LAT}}</nb-list-item>
+                <nb-list-item><b>WH_LONG:</b> {{comapredData.WH_LONG}}</nb-list-item>
+                <nb-list-item><b>WH_COORD_SYS:</b> {{comapredData.WH_COORD_SYS}}</nb-list-item>
+                <nb-list-item><b>WH_OPERATOR:</b> {{comapredData.WH_OPERATOR}}</nb-list-item>
+                <nb-list-item><b>WH_SPUD_DATE:</b> {{comapredData.WH_SPUD_DATE}}</nb-list-item>
+                <nb-list-item><b>WH_SPUD_YEAR:</b> {{comapredData.WH_SPUD_YEAR}}</nb-list-item>
+                <nb-list-item><b>WH_COMP_DATE:</b> {{comapredData.WH_COMP_DATE}}</nb-list-item>
+                <nb-list-item><b>WH_TD_M:</b> {{comapredData.WH_TD_M}}</nb-list-item>
+                <nb-list-item><b>WH_DR_ELEV_M:</b> {{comapredData.WH_DR_ELEV_M}}</nb-list-item>
+                <nb-list-item><b>WH_DEPTH_REF:</b> {{comapredData.WH_DEPTH_REF}}</nb-list-item>
+                <nb-list-item><b>WH_WATER_DEPTH_M:</b> {{comapredData.WH_WATER_DEPTH_M}}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID:</b> {{comapredData.SAMPLE_ID}}</nb-list-item>
+                <nb-list-item><b>SH_DEPTH_TOP_FT:</b> {{comapredData.SH_DEPTH_TOP_FT}}</nb-list-item>
+                <nb-list-item><b>SH_DEPTH_BOT_FT:</b> {{comapredData.SH_DEPTH_BOT_FT}}</nb-list-item>
+                <nb-list-item><b>SH_SAMPLE_TYPE:</b> {{comapredData.SH_SAMPLE_TYPE}}</nb-list-item>
+                <nb-list-item><b>SH_SAMPLE_SUB_TYPE:</b> {{comapredData.SH_SAMPLE_SUB_TYPE}}</nb-list-item>
+                <nb-list-item><b>SH_ORIG:</b> {{comapredData.SH_ORIG}}</nb-list-item>
+                <nb-list-item><b>SH_ORIG_DESC:</b> {{comapredData.SH_ORIG_DESC}}</nb-list-item>
+                <nb-list-item><b>SH_TREATMENT:</b> {{comapredData.SH_TREATMENT}}</nb-list-item>
+                <nb-list-item><b>SH_TREATMENT_DESC:</b> {{comapredData.SH_TREATMENT_DESC}}</nb-list-item>
+                <nb-list-item><b>SH_LITH:</b> {{comapredData.SH_LITH}}</nb-list-item>
+                <nb-list-item><b>SH_AGE:</b> {{comapredData.SH_AGE}}</nb-list-item>
+                <nb-list-item><b>SH_AGE_BOT:</b> {{comapredData.SH_AGE_BOT}}</nb-list-item>
+                <nb-list-item><b>SH_FORM:</b> {{comapredData.SH_FORM}}</nb-list-item>
+                <nb-list-item><b>SH_FORM_BOT:</b> {{comapredData.SH_FORM_BOT}}</nb-list-item>
+                <nb-list-item><b>SH_CDATE:</b> {{comapredData.SH_CDATE}}</nb-list-item>
+                <nb-list-item><b>SH_COMMENT:</b> {{comapredData.SH_COMMENT}}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID_GM:</b> {{comapredData.SAMPLE_ID_GM}}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID_GDB:</b> {{comapredData.SAMPLE_ID_GDB}}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID_SAM:</b> {{comapredData.SAMPLE_ID_SAM}}</nb-list-item>
+                <nb-list-item><b>EXT_SAMPLE_VENDOR:</b> {{comapredData.EXT_SAMPLE_VENDOR}}</nb-list-item>
+                <nb-list-item><b>SAMPLE_ID_EXT:</b> {{comapredData.SAMPLE_ID_EXT}}</nb-list-item>
+                <nb-list-item><b>GAS_METHOD:</b> {{comapredData.GAS_METHOD}}</nb-list-item>
+                <nb-list-item><b>GAS_LAB:</b> {{comapredData.GAS_LAB}}</nb-list-item>
+                <nb-list-item><b>GAS_ACQ_DATE:</b> {{comapredData.GAS_ACQ_DATE}}</nb-list-item>
+                <nb-list-item><b>GAS_TOTAL_CONCENTRATION:</b> {{comapredData.GAS_TOTAL_CONCENTRATION}}</nb-list-item>
+                <nb-list-item><b>GAS_AIR:</b> {{comapredData.GAS_AIR}}</nb-list-item>
+                <nb-list-item><b>GAS_C1:</b> {{comapredData.GAS_C1}}</nb-list-item>
+                <nb-list-item><b>GAS_C2:</b> {{comapredData.GAS_C2}}</nb-list-item>
+                <nb-list-item><b>C2_UNSAT:</b> {{comapredData.C2_UNSAT}}</nb-list-item>
+                <nb-list-item><b>GAS_C3:</b> {{comapredData.GAS_C3}}</nb-list-item>
+                <nb-list-item><b>C3_UNSAT:</b> {{comapredData.C3_UNSAT}}</nb-list-item>
+                <nb-list-item><b>GAS_IC4:</b> {{comapredData.GAS_IC4}}</nb-list-item>
+                <nb-list-item><b>GAS_NC4:</b> {{comapredData.GAS_NC4}}</nb-list-item>
+                <nb-list-item><b>C4_UNSAT:</b> {{comapredData.C4_UNSAT}}</nb-list-item>
+                <nb-list-item><b>GAS_NEOC5:</b> {{comapredData.GAS_NEOC5}}</nb-list-item>
+                <nb-list-item><b>GAS_IC5:</b> {{comapredData.GAS_IC5}}</nb-list-item>
+                <nb-list-item><b>GAS_NC5:</b> {{comapredData.GAS_NC5}}</nb-list-item>
+                <nb-list-item><b>C5_UNSAT:</b> {{comapredData.C5_UNSAT}}</nb-list-item>
+                <nb-list-item><b>GAS_NC5_PLUS:</b> {{comapredData.GAS_NC5_PLUS}}</nb-list-item>
+                <nb-list-item><b>GAS_C6PLUS:</b> {{comapredData.GAS_C6PLUS}}</nb-list-item>
+                <nb-list-item><b>GAS_O2:</b> {{comapredData.GAS_O2}}</nb-list-item>
+                <nb-list-item><b>GAS_CO2:</b> {{comapredData.GAS_CO2}}</nb-list-item>
+                <nb-list-item><b>GAS_H2:</b> {{comapredData.GAS_H2}}</nb-list-item>
+                <nb-list-item><b>GAS_H2S:</b> {{comapredData.GAS_H2S}}</nb-list-item>
+                <nb-list-item><b>GAS_HE:</b> {{comapredData.GAS_HE}}</nb-list-item>
+                <nb-list-item><b>GAS_N2:</b> {{comapredData.GAS_N2}}</nb-list-item>
+                <nb-list-item><b>D_G_METHOD:</b> {{comapredData.D_G_METHOD}}</nb-list-item>
+                <nb-list-item><b>D_G_LAB:</b> {{comapredData.D_G_LAB}}</nb-list-item>
+                <nb-list-item><b>D_G_DATA_TYPE:</b> {{comapredData.D_G_DATA_TYPE}}</nb-list-item>
+                <nb-list-item><b>D_G_ACQ_DATE:</b> {{comapredData.D_G_ACQ_DATE}}</nb-list-item>
+                <nb-list-item><b>CSIA_CONC_C1:</b> {{comapredData.CSIA_CONC_C1}}</nb-list-item>
+                <nb-list-item><b>CSIA_NC1:</b> {{comapredData.CSIA_NC1}}</nb-list-item>
+                <nb-list-item><b>CSIA_NC2:</b> {{comapredData.CSIA_NC2}}</nb-list-item>
+                <nb-list-item><b>CSIA_NC3:</b> {{comapredData.CSIA_NC3}}</nb-list-item>
+                <nb-list-item><b>CSIA_IC4:</b> {{comapredData.CSIA_IC4}}</nb-list-item>
+                <nb-list-item><b>CSIA_NC4:</b> {{comapredData.CSIA_NC4}}</nb-list-item>
+                <nb-list-item><b>CSIA_NEOC5:</b> {{comapredData.CSIA_NEOC5}}</nb-list-item>
+                <nb-list-item><b>CSIA_IC5:</b> {{comapredData.CSIA_IC5}}</nb-list-item>
+                <nb-list-item><b>CSIA_NC5:</b> {{comapredData.CSIA_NC5}}</nb-list-item>
+                <nb-list-item><b>CSIA_ETHENE:</b> {{comapredData.CSIA_ETHENE}}</nb-list-item>
+                <nb-list-item><b>CSIA_PROPENE:</b> {{comapredData.CSIA_PROPENE}}</nb-list-item>
+                <nb-list-item><b>DC_G_CO2:</b> {{comapredData.DC_G_CO2}}</nb-list-item>
+                <nb-list-item><b>DO_G_CO2:</b> {{comapredData.DO_G_CO2}}</nb-list-item>
+                <nb-list-item><b>DS_G_H2S:</b> {{comapredData.DS_G_H2S}}</nb-list-item>
+                <nb-list-item><b>DD_G_H2:</b> {{comapredData.DD_G_H2}}</nb-list-item>
+                <nb-list-item><b>DN_G_N2:</b> {{comapredData.DN_G_N2}}</nb-list-item>
+                <nb-list-item><b>DD_G_GAS:</b> {{comapredData.DD_G_GAS}}</nb-list-item>
+                <nb-list-item><b>DD_G_NC1:</b> {{comapredData.DD_G_NC1}}</nb-list-item>
+                <nb-list-item><b>DD_G_NC2:</b> {{comapredData.DD_G_NC2}}</nb-list-item>
+                <nb-list-item><b>DD_G_NC3:</b> {{comapredData.DD_G_NC3}}</nb-list-item>
+                <nb-list-item><b>DD_G_IC4:</b> {{comapredData.DD_G_IC4}}</nb-list-item>
+                <nb-list-item><b>DD_G_NC4:</b> {{comapredData.DD_G_NC4}}</nb-list-item>
+                <nb-list-item><b>DD_G_IC5:</b> {{comapredData.DD_G_IC5}}</nb-list-item>
+                <nb-list-item><b>DD_G_NC5:</b> {{comapredData.DD_G_NC5}}</nb-list-item>
+              </nb-list>
+            </nb-accordion-item-body>
+          </nb-accordion-item>
+        </nb-accordion>
+        <div style="height: 60vh;">
+          <chart style="height: 60vh;" [type]="type" [data]="d1" [options]="options"></chart>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+
+</div>
+
+<div *ngIf="isComparing" class="row">
+  <div class="col-xxl-12 col-md-12">
+    <nb-card *ngIf="d2">
+      <nb-card-header>Well {{comapredData.WELL_NAME}} compared to {{data.WELL_NAME}}</nb-card-header>
+      <nb-card-body>
+        GAS C1 Level: {{comapredData.GAS_C1}} | {{data.GAS_C1}}
+        <div style="height: 60vh;">
+          <chart style="height: 60vh;" [type]="type" [data]="d2" [options]="options2"></chart>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
